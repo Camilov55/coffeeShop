@@ -1,13 +1,9 @@
-from django.http import HttpResponse
 from django.urls import path
-
-def my_view(request, *args, **kwargs):
-    print(args)
-    print(kwargs)
-    return HttpResponse("")
+from .views import my_view, my_text_view, CarListView
 
 urlpatterns = [
-    path("listado/", my_view),
-    path("detalle/<int:id>", my_view),
-    path("marcas/<str:brand>", my_view)
+    #path("listado/", my_view),
+    path("listado/", CarListView.as_view()),
+    path("detalle/<int:id>", my_text_view),
+    path("marcas/<str:brand>", my_text_view)
 ]

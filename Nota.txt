@@ -1,3 +1,0 @@
-La mayoria de del procedimiento de para aprender Django esta en la carpeta Phyton-Django.Este curso es de Youtube.
-
-Aqui solo cosas interezantes del curso de Platzi. 
