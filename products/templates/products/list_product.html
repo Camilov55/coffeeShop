@@ -3,8 +3,8 @@
 {% block content %}
 
 <div class="grid grid-cols-1 gap-4 md:grid-cols-4 md:gap-8 mt-8">
-    {% for product in products %}
-
+  {% for product in products %}
+  <div class="h-32 rounded-lg bg-gray-200">
     <a href="#" class="group relative block overflow-hidden">
         <button
           class="absolute end-4 top-4 z-10 rounded-full bg-white p-1.5 text-gray-900 transition hover:text-gray-900/75"
@@ -42,27 +42,19 @@
       
           <p class="mt-1.5 text-sm text-gray-700">${{product.price}}</p>
       
-          <form class="mt-4">
-           {% comment %}  <button
+          <form action="{% url "add_product" %}" class="mt-4" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="product" value="{{product.id}}">
+            <button
               class="block w-full rounded bg-yellow-400 p-4 text-sm font-medium transition hover:scale-105"
             >
-              Add to Cart
-            </button> {% endcomment %}
+              Agregar al pedido
+            </button>
           </form>
         </div>
     </a>
-
-    {% endfor %}
+  </div>
+  {% endfor %}
 </div>
 {% endblock content %}
-    {% comment %} <li>
-        {{product.name}}
-        <p> {{product.price}} </p>
-        {% if product.photo %}
-            <img src="{{product.photo.url}}" alt="{{product.name}}" style="max-height: 10px;">
-        {% endif %}
-    </li>
-    {% endfor %}
-</ul>
-{% endblock content %} {% endcomment %}
 
