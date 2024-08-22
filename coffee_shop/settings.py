@@ -134,3 +134,4 @@ CRISPY_TEMPLATE_PACK = "tailwind"
 
 LOGIN_REDIRECT_URL = 'list_product' # Direccionamiento al usuario y contraseña (A donde quiere ir)
 LOGOUT_REDIRECT_URL = 'list_product' # Direccionamiento cuando el usuario cierra sesion
+LOGIN_URL = 'login'
