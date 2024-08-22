@@ -1,11 +1,8 @@
  {% extends "base.html" %}
 
 {% block content %}
-<h1 class="text-3xl font-bold underline text-clifford">
-    Lista de productos!
-</h1>
 
-<ul>
+<div class="grid grid-cols-1 gap-4 md:grid-cols-4 md:gap-8 mt-8">
     {% for product in products %}
 
     <a href="#" class="group relative block overflow-hidden">
@@ -34,6 +31,7 @@
             src="{{product.photo.url}}"
             alt="{{product.name}}"
             class="h-64 w-full object-cover transition duration-500 group-hover:scale-105 sm:h-72"
+            
             />
         {% endif %}
       
@@ -54,9 +52,10 @@
         </div>
     </a>
 
-
-
-    <li>
+    {% endfor %}
+</div>
+{% endblock content %}
+    {% comment %} <li>
         {{product.name}}
         <p> {{product.price}} </p>
         {% if product.photo %}
@@ -65,5 +64,5 @@
     </li>
     {% endfor %}
 </ul>
-{% endblock content %}
+{% endblock content %} {% endcomment %}
 
